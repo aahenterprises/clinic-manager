@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AAH Clinic | Management System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="loader">
+    <div class="loader-logo">AAH</div>
+    <p>Clinic</p>
+    <div class="bar"><span></span></div>
+</div>
+
+<header>
+    <div class="logo">AAH Clinic</div>
+    <button id="logoutBtn" class="ghost small hidden" type="button">Log out</button>
+</header>
+
+<!-- Setup / login -->
+<main id="authView" class="hidden">
+    <section class="card login">
+        <h1 id="authTitle">Log in</h1>
+        <p id="authSub" class="sub"></p>
+        <label for="email">Email</label>
+        <input id="email" type="email" autocomplete="username">
+        <label for="password">Password</label>
+        <input id="password" type="password" autocomplete="current-password">
+        <p id="authError" class="error"></p>
+        <button id="authBtn" type="button">Log in</button>
+    </section>
+</main>
+
+<!-- App -->
+<main id="appView" class="hidden">
+    <div class="tabs">
+        <button class="tab on" data-tab="dash" type="button">Dashboard</button>
+        <button class="tab" data-tab="patients" type="button">Patients</button>
+        <button class="tab" data-tab="appts" type="button">Appointments</button>
+        <button class="tab" data-tab="doctors" type="button">Doctors</button>
+    </div>
+
+    <section id="tab-dash">
+        <h1>Clinic <span class="grad">overview</span></h1>
+        <div class="kpis">
+            <div class="kpi"><small>Patients</small><b id="kPatients">0</b></div>
+            <div class="kpi"><small>Today</small><b id="kToday">0</b></div>
+            <div class="kpi"><small>Scheduled</small><b id="kScheduled">0</b></div>
+            <div class="kpi"><small>Completed</small><b id="kCompleted">0</b></div>
+        </div>
+        <div class="card"><h2>Today's appointments</h2><div id="todayList"></div></div>
+    </section>
+
+    <section id="tab-patients" class="hidden">
+        <div class="card">
+            <h2 id="pFormTitle">Add a patient</h2>
+            <div class="form3">
+                <div><label for="pName">Full name</label><input id="pName" type="text" maxlength="80"></div>
+                <div><label for="pPhone">Phone</label><input id="pPhone" type="tel" maxlength="30"></div>
+                <div><label for="pAge">Age</label><input id="pAge" type="number" min="0" max="130"></div>
+                <div><label for="pGender">Gender</label>
+                    <select id="pGender"><option value="">-</option><option>Male</option><option>Female</option><option>Other</option></select></div>
+            </div>
+            <label for="pNotes" style="margin-top:14px">Notes</label>
+            <input id="pNotes" type="text" maxlength="500" placeholder="Allergies, history, anything to remember">
+            <p id="pMsg" class="error"></p>
+            <div class="actions">
+                <button id="pSave" type="button">Add patient</button>
+                <button id="pCancel" class="ghost hidden" type="button">Cancel edit</button>
+            </div>
+        </div>
+        <div class="card">
+            <h2>All patients</h2>
+            <input id="pSearch" type="search" placeholder="Search by name or phone">
+            <div id="patientList"></div>
+        </div>
+    </section>
+
+    <section id="tab-appts" class="hidden">
+        <div class="card">
+            <h2>Book an appointment</h2>
+            <div class="form3">
+                <div><label for="aPatient">Patient</label><select id="aPatient"></select></div>
+                <div><label for="aDoctor">Doctor</label><select id="aDoctor"></select></div>
+                <div><label for="aDate">Date</label><input id="aDate" type="date"></div>
+                <div><label for="aTime">Time</label><select id="aTime"></select></div>
+            </div>
+            <label for="aReason" style="margin-top:14px">Reason</label>
+            <input id="aReason" type="text" maxlength="200" placeholder="e.g. Fever and cough">
+            <p id="aMsg" class="error"></p>
+            <button id="aSave" type="button">Book appointment</button>
+        </div>
+        <div class="card">
+            <h2>All appointments</h2>
+            <div class="filters">
+                <input id="aSearch" type="search" placeholder="Search patient, phone or doctor">
+                <select id="aStatus"><option value="">All statuses</option><option>Scheduled</option><option>Completed</option><option>Cancelled</option></select>
+                <input id="aFilterDate" type="date">
+            </div>
+            <div id="apptList"></div>
+        </div>
+    </section>
+
+    <section id="tab-doctors" class="hidden">
+        <div class="card">
+            <h2>Add a doctor</h2>
+            <div class="form3">
+                <div><label for="dName">Doctor name</label><input id="dName" type="text" maxlength="80"></div>
+                <div><label for="dSpec">Speciality</label><input id="dSpec" type="text" maxlength="60" placeholder="e.g. General Physician"></div>
+            </div>
+            <p id="dMsg" class="error"></p>
+            <button id="dSave" type="button">Add doctor</button>
+        </div>
+        <div class="card"><h2>Doctors</h2><div id="doctorList"></div></div>
+    </section>
+</main>
+
+<footer>&copy; 2026 AAH Enterprises &bull; Founder &amp; CEO: Muhammad Awais Raza</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
