@@ -35,7 +35,7 @@ A full-stack clinic management web app built by **AAH Enterprises**. It uses a r
 
 1. Install [Node.js](https://nodejs.org) (LTS version).
 2. Download or clone this repository.
-3. Open a terminal in the project folder and run:<img width="1246" height="310" alt="Screenshot 2026-10-23 231545" src="https://github.com/user-attachments/assets/1f5eb46c-2666-4a86-aea5-88cd9fd2fe70" />
+3. Open a terminal in the project folder and run:<img width="1246" height="310" alt="Screenshot 2026-10-23 231545" 
 <img width="1246" height="310" <img width="1288" height="596" alt="Screenshot 2026-10-23 231228" src="https://github.com/user-attachments/assets/8f74044c-8b35-4dc3-b4ef-e724aa1a9556" />
 <img width="1241" height="597" alt="Screenshot 2026-10-23 231345" src="https://github.com/user-attachments/assets/ca718377-e245-4712-be55-56bbdd8e1fca" />
 <img width="1228" height="603" alt="Screenshot 2026-10-23 231446" src="https://github.com/user-attachments/assets/3f336781-4dee-40f7-bc77-79f46f628ea4" />
